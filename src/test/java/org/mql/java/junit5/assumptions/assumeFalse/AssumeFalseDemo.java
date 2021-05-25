@@ -55,7 +55,7 @@ public class AssumeFalseDemo {
 	
 	@Test
 	public void assumeFalseWithBooleanSupplierAndMessage() {
-		assumeFalse(() -> "DEV".equals(System.getProperty("ENV")), "Assumption Failed !!!");
+		assumeFalse("DEV".equals(System.getProperty("ENV")), "Assumption Failed !!!");
 		
 		System.out.println("Assumption passed !!!");
 		assertEquals(3, 2 + 1);
