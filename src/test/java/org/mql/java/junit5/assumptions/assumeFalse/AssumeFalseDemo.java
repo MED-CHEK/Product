@@ -39,7 +39,7 @@ public class AssumeFalseDemo {
 	
 	@Test
 	public void assumeFalseWithMessageSupplier() {
-		assumeFalse("DEV".equals(System.getProperty("ENV")), () -> "Our assumption Failed !!!");
+		assumeFalse("DEV".equals(System.getProperty("ENV")),"Our assumption Failed !!!");
 		
 		System.out.println("Assumption passed !!!");
 		assertEquals(3, 2 + 1);
@@ -47,7 +47,7 @@ public class AssumeFalseDemo {
 	
 	@Test
 	public void assumeFalseWithBooleanSupplierAndNoMessage() {
-		assumeFalse(() -> "DEV".equals(System.getProperty("ENV")));
+		assumeFalse("DEV".equals(System.getProperty("ENV")));
 		
 		System.out.println("Assumption passed !!!");
 		assertEquals(3, 2 + 1);
@@ -63,7 +63,7 @@ public class AssumeFalseDemo {
 	
 	@Test
 	public void assumeFalseWithBooleanSupplierAndMessageSupplier() {
-		assumeFalse(() -> "DEV".equals(System.getProperty("ENV")), () -> "Assumption Failed !!!");
+		assumeFalse("DEV".equals(System.getProperty("ENV")),"Assumption Failed !!!");
 		
 		System.out.println("Assumption passed !!!");
 		assertEquals(3, 2 + 1);

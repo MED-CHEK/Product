@@ -33,7 +33,7 @@ public class AssertFalseDemo {
 		
 		List<Book> list = bookService.getList();
 		
-		assertFalse(list.isEmpty());
+		assertFalse(() -> list.isEmpty());
 		
 	}
 	
@@ -61,7 +61,7 @@ public class AssertFalseDemo {
 		
 		List<Book> listOfBooks = bookService.getList();
 		
-		assertFalse(listOfBooks.isEmpty(), "List of books is not empty!");
+		assertFalse(() -> listOfBooks.isEmpty(), "List of books is not empty!");
 		
 	}
 	
@@ -75,7 +75,7 @@ public class AssertFalseDemo {
 		
 		List<Book> list = bookService.getList();
 		
-		assertFalse(list.isEmpty(),"List of books is empty!");
+		assertFalse(list.isEmpty(), () -> "List of books is empty!");
 		
 	}
 	
@@ -89,7 +89,7 @@ public class AssertFalseDemo {
 		
 		List<Book> list = bookService.getList();
 		
-		assertFalse(list.isEmpty(),"List of books is empty!");
+		assertFalse(() -> list.isEmpty(), () -> "List of books is empty!");
 		
 	}
 	

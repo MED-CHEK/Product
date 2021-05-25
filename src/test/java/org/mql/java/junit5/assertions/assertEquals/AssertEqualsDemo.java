@@ -56,7 +56,7 @@ public class AssertEqualsDemo {
 		Book actualBook = bookService.getById("1");
 		
 		assertEquals("1", actualBook.getId());
-		assertEquals("Head First Java", actualBook.getTitle(), () -> "Book title didnt match!");
+		assertEquals("Head First Java", actualBook.getTitle());
 	}
 	
 }

@@ -1,17 +1,17 @@
-package org.mql.java.junit5.disabled;
+package org.mql.java.junit5.assertions.assertNull;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNull;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mql.java.junit5.livre.model.Book;
 import org.mql.java.junit5.livre.service.BookService;
 
-@Disabled("ignoré jusqu'à ce que le problème soit résolu")
-public class DisabledDemo {
 
+
+public class AssertNullDemo {
+	
 	@Test
-	public void assertEqualsWithNoMessage() {
+	public void assertNullWithNoMessage() {
 		BookService bookService = new BookService();
 		
 		Book headFirstJavaBook = new Book("1", "Head First Java", "Wrox");
@@ -20,14 +20,12 @@ public class DisabledDemo {
 		bookService.addBook(headFirstJavaBook);
 		bookService.addBook(headFirstDesignPatternBook);
 		
-		Book actualBook = bookService.getById("1");
-		
-		assertEquals("1", actualBook.getId());
-		assertEquals("Head First Java", actualBook.getTitle());
+		Book actualBook = bookService.getById("4");
+		assertNull(actualBook);
 	}
 	
 	@Test
-	public void assertEqualsWithMessage() {
+	public void assertNullWithMessage() {
 		BookService bookService = new BookService();
 		
 		Book headFirstJavaBook = new Book("1", "Head First Java", "Wrox");
@@ -36,14 +34,12 @@ public class DisabledDemo {
 		bookService.addBook(headFirstJavaBook);
 		bookService.addBook(headFirstDesignPatternBook);
 		
-		Book actualBook = bookService.getById("1");
-		
-		assertEquals("1", actualBook.getId());
-		assertEquals("Head First Java", actualBook.getTitle(), "Book title didnt match!");
+		Book actualBook = bookService.getById("4");
+		assertNull(actualBook, "Book is not null !");
 	}
 	
 	@Test
-	public void assertEqualsWithMessageSupplier() {
+	public void assertNullWithMessageSupplier() {
 		BookService bookService = new BookService();
 		
 		Book headFirstJavaBook = new Book("1", "Head First Java", "Wrox");
@@ -52,10 +48,8 @@ public class DisabledDemo {
 		bookService.addBook(headFirstJavaBook);
 		bookService.addBook(headFirstDesignPatternBook);
 		
-		Book actualBook = bookService.getById("1");
-		
-		assertEquals("1", actualBook.getId());
-		assertEquals("Head First Java", actualBook.getTitle(), () -> "Book title didnt match!");
+		Book actualBook = bookService.getById("4");
+		assertNull(actualBook, () -> "Book is not null !");
 	}
 	
 }

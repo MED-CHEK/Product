@@ -52,7 +52,7 @@ public class AssertNotEqualsDemo {
 		
 		Book actualBook = bookService.getById("1");
 		
-		assertNotEquals("5", actualBook.getId(), () -> "BookId matches to expected value!");
+		assertNotEquals("5", actualBook.getId(),"BookId matches to expected value!");
 	}
 	
 }

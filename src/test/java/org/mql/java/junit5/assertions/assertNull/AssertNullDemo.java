@@ -49,7 +49,7 @@ public class AssertNullDemo {
 		bookService.addBook(headFirstDesignPatternBook);
 		
 		Book actualBook = bookService.getById("4");
-		assertNull(actualBook, () -> "Book is not null !");
+		assertNull(actualBook,"Book is not null !");
 	}
 	
 }
